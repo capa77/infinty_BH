@@ -648,6 +648,23 @@
             <convert type="ConditionalShowHide" />
         </widget>
 
+	<widget source="menu" render="Pixmap" pixmap="infinity_BH/menu/on_main_menu_teleport.png" position="140,195"  size="248,355" alphatest="blend" transparent="1" >
+            <convert type="MenuEntryCompare">blackhole_red</convert>
+            <convert type="ConditionalShowHide" />
+        </widget>
+	<widget source="menu" render="Pixmap" pixmap="infinity_BH/menu/on_main_menu_app.png" position="140,195"  size="248,355" alphatest="blend" transparent="1" >
+            <convert type="MenuEntryCompare">blackhole_extra</convert>
+            <convert type="ConditionalShowHide" />
+        </widget>
+	<widget source="menu" render="Pixmap" pixmap="infinity_BH/menu/on_main_menu_epg.png" position="140,195"  size="248,355" alphatest="blend" transparent="1" >
+            <convert type="MenuEntryCompare">epg_panel</convert>
+            <convert type="ConditionalShowHide" />
+        </widget>
+	<widget source="menu" render="Pixmap" pixmap="infinity_BH/menu/BhBackupFull.png" position="140,195"  size="248,355" alphatest="blend" transparent="1" >
+            <convert type="MenuEntryCompare">backup_screen</convert>
+            <convert type="ConditionalShowHide" />
+        </widget>
+
 
     <!-- <ePixmap name="new ePixmap" position="585, 30" size="55, 40" alphatest="blend" pixmap="infinity_BH/menu/logo_hd.png" zPosition="3" />-->
   </screen>
@@ -4594,6 +4611,29 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
         <widget name="key_red" position="185,562" zPosition="1" size="150,25" font="Regular;20" halign="center" backgroundColor="transpBlack" transparent="1"/>
         <widget name="key_green" position="385,562" zPosition="1" size="150,25" font="Regular;20" halign="center" backgroundColor="transpBlack" transparent="1"/>
     </screen>
+    
+    <screen name="Nab_downFeedCat" position="center,center" size="880,490" title="Black Hole Feeds Plugins">
+        <widget source="list" render="Listbox" position="10,10" size="860,470" zPosition="1" scrollbarMode="showOnDemand"  transparent="1">
+                <convert type="TemplatedMultiContent">
+                {"template": [
+                MultiContentEntryText(pos = (4, 2), size = (840, 36), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+                ],
+                "fonts": [gFont("Regular", 26)],
+                "itemHeight": 36
+                }
+                </convert>
+            </widget>
+    </screen>
+    
+    <screen name="Nab_ShowFeedFile" position="center,center" size="800,405" title="Black Hole E2 Package Details">
+        <widget name="infotext" position="20,15" size="760,315" font="Regular;24" />
+        <ePixmap pixmap="infinity_BH/buttons/green.png" position="173,365" size="140,40" alphatest="on" />
+        <widget name="key_green" position="173,365" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+        <ePixmap pixmap="infinity_BH/buttons/yellow.png" position="486,365" size="140,40" alphatest="on" />
+        <widget name="key_yellow" position="486,365" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+    </screen>
+    
+    
     <!-- NEWSCREEN xxxxxxxxxxxxxxxxx -->   
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     <!-- BlackHole Info  -->
@@ -5946,4 +5986,5 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="Nab_debOut" position="320,150" size="650,250" title="Black Hole Message">
     <widget name="outlabel" position="10,10" size="620,240" font="Regular;23" halign="center" valign="center" transparent="1" />
   </screen>
+
 </skin>
